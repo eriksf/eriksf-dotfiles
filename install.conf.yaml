@@ -18,20 +18,30 @@
     ~/.tmux.conf: tmux.conf
     ~/bin: bin/
     ~/.vim: vim/
+    ~/.zlogin:
+      force: true
+      path: zlogin
+    ~/.zprofile:
+      force: true
+      path: zprofile
+    ~/.zshenv:
+      force: true
+      path: zshenv
     ~/.zshrc:
       force: true
       path: zshrc
     ~/.zshrc_local_after: zshrc_local_after
     ~/.gitconfig: gitconfig
     ~/.gitmessage: gitmessage
-    ~/.oh-my-zsh/custom/my-aliases.zsh: oh-my-zsh/custom/my-aliases.zsh
     ~/.oh-my-zsh/custom/plugins/zsh-completions: oh-my-zsh/custom/plugins/zsh-completions/
     ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting: oh-my-zsh/custom/plugins/zsh-syntax-highlighting/
     ~/.oh-my-zsh/custom/themes/powerlevel10k: oh-my-zsh/custom/themes/powerlevel10k/
     ~/.motd: my_motd.sh
     ~/Brewfile: Brewfile
     ~/.vimrc: vimrc
+    ~/.macos: macos
 
 - shell:
   - [sh fonts/install.sh, Installing Powerline fonts]
+  - [sh ~/.macos, Customizing MacOS environment]
   - [sh post-install.sh, Running post installation script]
