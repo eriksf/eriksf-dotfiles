@@ -7,15 +7,9 @@
 [submodule "oh-my-zsh/custom/plugins/zsh-syntax-highlighting"]
 	path = oh-my-zsh/custom/plugins/zsh-syntax-highlighting
 	url = git://github.com/zsh-users/zsh-syntax-highlighting.git
-[submodule "vim/bundle/Vundle.vim"]
-	path = vim/bundle/Vundle.vim
-	url = https://github.com/VundleVim/Vundle.vim.git
-[submodule "base16-builder"]
-	path = base16-builder
-	url = https://github.com/chriskempson/base16-builder.git
 [submodule "fonts"]
 	path = fonts
 	url = https://github.com/powerline/fonts.git
-[submodule "oh-my-zsh/custom/themes/bullet-train"]
-	path = oh-my-zsh/custom/themes/bullet-train
-	url = https://github.com/caiogondim/bullet-train-oh-my-zsh-theme.git
+[submodule "oh-my-zsh/custom/themes/powerlevel10k"]
+	path = oh-my-zsh/custom/themes/powerlevel10k
+	url = https://github.com/romkatv/powerlevel10k.git
