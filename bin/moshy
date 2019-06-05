@@ -1,0 +1,58 @@
+#!/usr/bin/env bash
+
+USAGE="Usage: `basename $0` [-hvfd] [-s arg] args"
+#fallback=1
+
+while getopts hvfds: OPT; do
+    case "$OPT" in
+        h)
+            echo $USAGE
+            exit 0
+            ;;
+        v)
+            echo "`basename $0` version 0.1"
+            exit 0
+            ;;
+        f)
+            fallback=1
+            ;;
+        d)
+            dark_mode=1
+            ;;
+        s)
+            sshopts=$OPTARG
+            ;;
+        \?)
+            # getopts issues an error message
+            echo $USAGE >&2
+            exit 1
+            ;;
+    esac
+done
+
+# remove the switches we parsed above.
+shift `expr $OPTIND - 1`
+
+if [[ ! -z "$dark_mode" ]]; then
+    source ~/.bash_prompt_black
+    tput reset
+fi
+
+if [[ ! -z "$sshopts" ]]; then
+    if [[ -z "$fallback" ]]; then
+        #echo "/usr/local/bin/mosh --predict=always --no-init --ssh='$sshopts' $*"
+        /usr/local/bin/mosh --predict=always --no-init --ssh="$sshopts" $*
+    else
+        #echo "/usr/bin/$sshopts $*"
+        /usr/bin/$sshopts $*
+    fi
+else
+    if [[ -z "$fallback" ]]; then
+        #echo "/usr/local/bin/mosh --predict=always --no-init $*"
+        /usr/local/bin/mosh --predict=always --no-init $*
+    else
+        #echo "/usr/bin/ssh $*"
+        /usr/bin/ssh $*
+    fi
+fi
+

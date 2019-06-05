@@ -1,205 +1,143 @@
-set nocompatible              " be iMproved, required
-filetype off                  " required
+" Use Vim settings, rather then Vi settings (much better!).
+" This must be first, because it changes other options as a side effect.
+set nocompatible
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
+" =============== Pathogen Initialization ===============
+" This loads all the plugins in ~/.vim/bundle
+" Use tpope's pathogen plugin to manage all other plugins
 
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
+"  runtime bundle/tpope-vim-pathogen/autoload/pathogen.vim
+"  call pathogen#infect()
+"  call pathogen#helptags()
+call pathogen#infect()
+call pathogen#helptags()
 
-" Keep Plugin commands between vundle#begin/end.
+" ================ General Config ====================
 
-Plugin 'chriskempson/base16-vim'
-Plugin 'davidhalter/jedi-vim'
-Plugin 'scrooloose/nerdcommenter'
-Plugin 'scrooloose/nerdtree'
-Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-surround'
-Plugin 'kien/ctrlp.vim'
-Plugin 'L9'
-Plugin 'FuzzyFinder'
-Plugin 'vim-ruby/vim-ruby'
-Plugin 'maciakl/vim-neatstatus'
-Plugin 'elzr/vim-json'
-Plugin 'git://git.wincent.com/command-t.git'
-Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
-Plugin 'https://github.com/scrooloose/syntastic.git'
-Plugin 'Yggdroot/indentLine'
-Plugin 'nvie/vim-flake8'
-Plugin 'chrisbra/csv.vim'
-Plugin 'junegunn/vim-emoji'
-Plugin 'majutsushi/tagbar'
-Plugin 'pangloss/vim-javascript'
-Plugin 'mxw/vim-jsx'
-Plugin 'othree/javascript-libraries-syntax.vim'
-Plugin 'ternjs/tern_for_vim'
+set number                      "Line numbers are good
+set backspace=indent,eol,start  "Allow backspace in insert mode
+set history=1000                "Store lots of :cmdline history
+set showcmd                     "Show incomplete cmds down the bottom
+set showmode                    "Show current mode down the bottom
+"set gcr=a:blinkon0              "Disable cursor blink
+set visualbell                  "No sounds
+set autoread                    "Reload files changed outside vim
+set laststatus=2
+set ruler
+set magic
+set lazyredraw
+"set wildmode
+set wildmenu
+set cmdheight=2
+set showmatch
+set mat=2
+set cursorline
 
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
-"
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-"
-" see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line
+" This makes vim act like all other editors, buffers can
+" exist in the background without being in a window.
+" http://items.sjbach.com/319/configuring-vim-right
+set hidden
 
+"turn on syntax highlighting
+syntax on
+colorscheme zenburn
 
-"""""""""""""""""""""""""BASE CONFIG""""""""""""""""""""
-" color theme setup
-set number
-syntax enable
-highlight LineNr term=bold cterm=NONE ctermfg=LightGray ctermbg=DarkGray gui=NONE guifg=LightGray guibg=DarkGray
-" set background=dark
-" let base16colorspace=256  " Access colors present in 256 colorspace
-" :silent! colorscheme base16-ocean
-" :silent! colorscheme base16-3024
-" :silent! colorscheme base16-default-dark
+" yank to clipboard
+if has("clipboard")
+  set clipboard=unnamed " copy to the system clipboard
 
-" backspace available
-set backspace=2
-
-" backspace once to delete
-set smarttab
-
-" indentation
-set autoindent
-set smartindent
-
-" allows the use of a mouse
-set mouse=a
-
-" automatically delete trailing spaces or Tab when saves file
-autocmd BufWritePre * :%s/\s\+$//e
-
-" filling TAB
-set expandtab
-set tabstop=4
-set shiftwidth=4
-set shiftround
-
-" code folding indentation beneath the cursor is in the folded or unfolded
-" with za command
-set fdm=indent
-" default expansion
-set foldlevel=99
-
-
-" when you open a file always jumps to the last cursor position
-autocmd BufReadPost *
-      \ if ! exists("g:leave_my_cursor_position_alone") |
-      \     if line("'\"") > 0 && line ("'\"") <= line("$") |
-      \         exe "normal g'\"" |
-      \     endif |
-      \ endif
-
-
-"""""""""""""""""""""""""KEY MAPPING""""""""""""""""""""
-" NORMAL mode Ctrl + a select all and copy it to the clipboard
-nmap <C-c> gg"+yG
-
-" VISUAL mode Ctrl + c to copy selected text to the clipboard
-vmap <C-c> "+y
-
-" Ctrl + v to paste equal
-inoremap <C-v> <ESC>"+pa
-
-" write to read-only files w!!
-cmap w!! w !sudo tee >/dev/null %
-
-" <F2> Switch line numbers
-nnoremap <F2> :set nonu!<CR>:set foldcolumn=0<CR>
-
-" <F3> Open the directory tree
-nmap <silent> <F3> :NERDTreeToggle<CR>
-
-" <F4> display TagList
-nmap <silent> <F4> :TagbarToggle<CR>
-
-" <F5> to run the script
-if exists("$VIRTUAL_ENV")
-	autocmd FileType python map <buffer> <F5> :!$VIRTUAL_ENV'/bin/python' %<CR>
-else
-	autocmd FileType python map <buffer> <F5> :!python %<CR>
+  if has("unnamedplus") " X11 support
+    set clipboard+=unnamedplus
+  endif
 endif
 
-autocmd FileType javascript map <buffer> <F5> :!node %<CR>
+" ================ Search Settings  =================
 
-" <F6> new tab
-map <F6> <Esc>:tabnew<CR>
+set incsearch        "Find the next match as we type the search
+set hlsearch         "Hilight searches by default
+set viminfo='100,f1  "Save up to 100 marks, enable capital marks
 
-" <F7> Copy and paste with indent
-set pastetoggle=<F7>
+" ================ Turn Off Swap Files ==============
 
-" <F8> sort import and auto pep8
-autocmd FileType python map <buffer> <F8> :!yapf -i % --style=google;isort %;<CR><CR>
+set noswapfile
+set nobackup
+set nowb
 
-" add word to current quote
-nnoremap w" viw<esc>a"<esc>hbi"<esc>lel
-nnoremap w' viw<esc>a'<esc>hbi'<esc>lel
+" ================ Persistent Undo ==================
+" Keep undo history across sessions, by storing in file.
+" Only works all the time.
 
-" in the Normal Mode and Visual / Select Mode, use the Tab key and the
-" Shift-Tab key to indent text
-nnoremap > >>
-nnoremap < <<
-vnoremap > >gv
-vnoremap < <gv
+"silent !mkdir ~/.vim/backups > /dev/null 2>&1
+"set undodir=~/.vim/backups
+"set undofile
 
-" quicker window switching
-nnoremap <C-h> <C-w>h
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-l> <C-w>l
+" ================ Indentation ======================
 
-" emoji
-imap <C-e> <C-X><C-U>
+set autoindent
+set smartindent
+set smarttab
+set smartcase
+set ignorecase
+set shiftwidth=4
+set softtabstop=4
+set tabstop=4
+set expandtab
 
+filetype plugin on
+filetype indent on
 
-"""""""""""""""""""""""""PLUGIN CONFIG""""""""""""""""""""
-" Syntastic setup
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+" Display tabs and trailing spaces visually
+"set list listchars=tab:\ \ ,trail:·
 
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
+"set nowrap       "Don't wrap lines
+set linebreak    "Wrap lines at convenient points
 
-" Emoji
-set completefunc=emoji#complete
+" ================ Folds ============================
 
-" NERD Commenter
-" NERD Commenter -- Add spaces after comment delimiters by default
-let g:NERDSpaceDelims=1
-" NERD Commenter -- Use compact syntax for prettified multi-line comments
-let g:NERDCompactSexyComs = 1
-" NERD Commenter -- Align line-wise comment delimiters flush left instead
-" of following code indentation
-let g:NERDDefaultAlign = 'left'
+"set foldmethod=indent   "fold based on indent
+"set foldnestmax=3       "deepest fold is 3 levels
+"set nofoldenable        "dont fold by default
 
-" Nerdtree
-let NERDTreeIgnore=['\.pyc$', '\~$']
+" ================ Completion =======================
 
-" CtrlP
-let g:ctrlp_show_hidden = 1
+set wildmode=list:longest
+set wildmenu                "enable ctrl-n and ctrl-p to scroll thru matches
+set wildignore=*.o,*.obj,*~ "stuff to ignore when tab completing
+set wildignore+=*vim/backups*
+set wildignore+=*sass-cache*
+set wildignore+=*DS_Store*
+set wildignore+=vendor/rails/**
+set wildignore+=vendor/cache/**
+set wildignore+=*.gem
+set wildignore+=log/**
+set wildignore+=tmp/**
+set wildignore+=*.png,*.jpg,*.gif
 
-" Jedi-vim setup
-autocmd FileType python setlocal completeopt-=preview
-let g:jedi#completions_command = "<C-Space>"
+"
 
-" Flake8
-let g:flake8_show_in_file = 1
-let g:flake8_show_in_gutter = 1
-autocmd! BufRead,BufWritePost *.py call Flake8()
+" ================ Scrolling ========================
 
-" Omni completion
-autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+set scrolloff=8         "Start scrolling when we're 8 lines away from margins
+set sidescrolloff=15
+set sidescroll=1
+
+" ================ Tabs ========================
+nnoremap th  :tabfirst<CR>
+nnoremap tj  :tabnext<CR>
+nnoremap tk  :tabprev<CR>
+nnoremap tl  :tablast<CR>
+nnoremap tt  :tabedit<Space>
+nnoremap tn  :tabnext<Space>
+nnoremap tm  :tabm<Space>
+nnoremap td  :tabclose<CR>
+
+set guifont=Inconsolata\ for\ Powerline:h15
+set t_Co=256
+set encoding=utf-8
+set fillchars+=stl:\ ,stlnc:\
+set term=xterm-256color
+set termencoding=utf-8
+
+let g:pymode_options_colorcolumn = 0
+let g:pymode_syntax = 0
+

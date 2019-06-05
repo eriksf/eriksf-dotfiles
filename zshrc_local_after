@@ -6,37 +6,37 @@ export VISUAL=vim
 export EDITOR="$VISUAL"
 
 # Go setup
-export PATH=$PATH:$GOPATH/bin
-export PATH=$PATH:$GOROOT/bin
+#export PATH=$PATH:$GOPATH/bin
+#export PATH=$PATH:$GOROOT/bin
 
 # pyenv setup
-export PYENV_ROOT=/usr/local/var/pyenv
-if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
+#export PYENV_ROOT=/usr/local/var/pyenv
+#if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
 # pyenv-virtualenv auto activation
-if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi
+#if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi
 
 # add this configuration to ~/.zshrc
-export HISTFILE=~/.zsh_history  # ensure history file visibility
+#export HISTFILE=~/.zsh_history  # ensure history file visibility
 export HH_CONFIG=hicolor        # get more colors
 bindkey -s "\C-r" "\eqhh\n"     # bind hh to Ctrl-r (for Vi mode check doc)
 
 # locale settings
-export LC_ALL=en_US.UTF-8
-export LANG=en_US.UTF-8
+#export LC_ALL=en_US.UTF-8
+#export LANG=en_US.UTF-8
 
 # Pyenv CFLAGS and LDFLGAS
-export CFLAGS="$CFLAGS -I$(brew --prefix openssl)/include"
-export LDFLAGS="$LDFLAGS -L$(brew --prefix openssl)/lib"
+#export CFLAGS="$CFLAGS -I$(brew --prefix openssl)/include"
+#export LDFLAGS="$LDFLAGS -L$(brew --prefix openssl)/lib"
 
 # CUDA development environment setup
 # export CUDA_HOME=/usr/local/cuda
 # export DYLD_LIBRARY_PATH="$DYLD_LIBRARY_PATH:$CUDA_HOME/lib"
 # export PATH="$CUDA_HOME/bin:$PATH"
 
-export CUDA_HOME=/usr/local/cuda
-export DYLD_LIBRARY_PATH=/usr/local/cuda/lib:/usr/local/cuda/extras/CUPTI/lib
-export LD_LIBRARY_PATH=$DYLD_LIBRARY_PATH
-export PATH=$DYLD_LIBRARY_PATH:$PATH
+#export CUDA_HOME=/usr/local/cuda
+#export DYLD_LIBRARY_PATH=/usr/local/cuda/lib:/usr/local/cuda/extras/CUPTI/lib
+#export LD_LIBRARY_PATH=$DYLD_LIBRARY_PATH
+#export PATH=$DYLD_LIBRARY_PATH:$PATH
 
 # Thefuck setup
 eval "$(thefuck --alias)"

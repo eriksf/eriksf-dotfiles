@@ -9,51 +9,29 @@
 
 - shell:
   - [sh pre-install.sh, Running pre installation script]
-  - [mkdir -p ~/.oh-my-zsh/custom/, Creating oh-my-zsh custom forlders]
-  - [mkdir -p ~/.oh-my-zsh/custom/plugins, Creating oh-my-zsh custom plugins forlders]
-  - [if ! hash bundle 2>/dev/null; then gem install bundler; fi, Installing Bundler]
-    #- [bundle install --system, Installing system gems from Gemfile]
-  - [bundle install, Installing system gems from Gemfile]
+  - [mkdir -p ~/.oh-my-zsh/custom/, Creating oh-my-zsh custom folders]
+  - [mkdir -p ~/.oh-my-zsh/custom/plugins, Creating oh-my-zsh custom plugins folders]
   - [brew bundle, Installing Homebrew formulas from Brewfile]
-  - [if ! hash yo 2>/dev/null; then npm install -g yo; fi, Installing Yeoman]
-  - [if ! hash bower 2>/dev/null; then npm install -g bower; fi, Installing Bower]
-  - [if ! hash gulp 2>/dev/null; then npm install -g gulp-cli; fi, Installing Gulp]
-  - [if ! hash browser-sync 2>/dev/null; then npm install -g browser-sync; fi, Installing Browsersync]
-  - [if ! hash eslint 2>/dev/null; then npm install -g eslint; fi, Installing ESLint]
-  - [if ! hash ncu 2>/dev/null; then npm install -g npm-check-updates; fi, Installing npm-check-updates]
-  - [if ! hash firebase 2>/dev/null; then npm install -g firebase-tools; fi, Installing Firebase CLI]
 
 - link:
     ~/.dotfiles: ''
-    ~/.base16-builder: base16-builder/
     ~/.tmux.conf: tmux.conf
+    ~/bin: bin/
     ~/.vim: vim/
     ~/.zshrc:
       force: true
       path: zshrc
     ~/.zshrc_local_after: zshrc_local_after
     ~/.gitconfig: gitconfig
-    ~/.gitconfig_local: gitconfig_local
     ~/.gitmessage: gitmessage
-    ~/.gitignore_global: gitignore_global
     ~/.oh-my-zsh/custom/my-aliases.zsh: oh-my-zsh/custom/my-aliases.zsh
-    ~/.oh-my-zsh/custom/plugins/brew: oh-my-zsh/custom/plugins/brew/
-    ~/.oh-my-zsh/custom/plugins/youtube-dl: oh-my-zsh/custom/plugins/youtube-dl/
     ~/.oh-my-zsh/custom/plugins/zsh-completions: oh-my-zsh/custom/plugins/zsh-completions/
     ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting: oh-my-zsh/custom/plugins/zsh-syntax-highlighting/
-    ~/.oh-my-zsh/custom/themes/bullet-train.zsh-theme: oh-my-zsh/custom/themes/bullet-train/bullet-train.zsh-theme
+    ~/.oh-my-zsh/custom/themes/powerlevel10k: oh-my-zsh/custom/themes/powerlevel10k/
     ~/.motd: my_motd.sh
     ~/Brewfile: Brewfile
-    ~/Gemfile: Gemfile
-    ~/.atom/packages.cson: packages.cson
-
-- shell:
-  - [vim +PluginInstall +qall, Installing Vundle plugins]
-
-- link:
     ~/.vimrc: vimrc
 
 - shell:
-  - [$HOME/.base16-builder/base16 -t terminal-app, Building all base16 terminal app color]
   - [sh fonts/install.sh, Installing Powerline fonts]
-  - [git submodule update --init --recursive, Installing submodules]
+  - [sh post-install.sh, Running post installation script]
