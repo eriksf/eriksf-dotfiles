@@ -40,6 +40,7 @@
     ~/Brewfile: Brewfile
     ~/.vimrc: vimrc
     ~/.macos: macos
+    ~/.tidy_config.txt: tidy_config.txt
 
 - shell:
   - [sh fonts/install.sh, Installing Powerline fonts]
