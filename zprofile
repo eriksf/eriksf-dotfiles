@@ -4,6 +4,9 @@
 #export LANG='en_US.UTF-8';
 #export LC_ALL='en_US.UTF-8';
 #
+export VIRTUAL_ENV_DISABLE_PROMPT=1
+export GIT_INTERNAL_GETTEXT_TEST_FALLBACKS=1
+
 export NVM_DIR=~/.node
 #export JAVA_HOME=`/usr/libexec/java_home -v 1.6`
 #export JAVA_HOME=`/usr/libexec/java_home -v 1.7`

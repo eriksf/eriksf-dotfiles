@@ -17,6 +17,8 @@ export ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="powerlevel10k/powerlevel10k"
 DEFAULT_USER="eriksf"
 POWERLEVEL9K_MODE="nerdfont-complete"
+POWERLEVEL9K_PYENV_BACKGROUND="204"
+POWERLEVEL9K_VIRTUALENV_BACKGROUND="204"
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon docker_machine virtualenv context dir_writable dir vcs)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs history time)
 
