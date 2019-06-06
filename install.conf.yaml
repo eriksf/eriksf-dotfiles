@@ -46,4 +46,5 @@
 - shell:
   - [sh fonts/install.sh, Installing Powerline fonts]
   - [sh ~/.macos, Customizing MacOS environment]
+  - [/usr/local/bin/code --install-extension "Shan.code-settings-sync", Install VSCode Sync Settings] 
   - [sh post-install.sh, Running post installation script]
