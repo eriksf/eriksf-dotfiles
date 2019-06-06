@@ -23,7 +23,7 @@ export HTML_TIDY=$HOME/.tidy_config.txt
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/Devel
 
-export HOMEBREW_GITHUB_API_TOKEN=`/usr/bin/security find-generic-password -gs HOMEBREW_GITHUB_API_TOKEN 2>&1 >/dev/null |  cut -f 2 -d ' ' | egrep -o '[0-9a-fA-F]+' | tr -d "\n"`
+export HOMEBREW_GITHUB_API_TOKEN=`/usr/bin/security find-generic-password -gs HOMEBREW_GITHUB_API_TOKEN 2>&1 >/dev/null | grep password | cut -f 2 -d ' ' | egrep -o '[0-9a-fA-F]+' | tr -d "\n"`
 
 # Highlight section titles in manual pages.
 export LESS_TERMCAP_md="${yellow}";
