@@ -41,5 +41,7 @@ bindkey -s "\C-r" "\eqhh\n"     # bind hh to Ctrl-r (for Vi mode check doc)
 # Thefuck setup
 eval "$(thefuck --alias)"
 
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
 bash $HOME/.motd
 

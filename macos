@@ -678,6 +678,7 @@ defaults write com.apple.Terminal ShowLineMarks -int 0
 defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "~/.dotfiles/iterm"
 # Tell iTerm2 to use the custom preferences in the directory
 defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true
+defautts write com.googlecode.iterm2.plist "NoSyncNeverRemindPrefsChangesLostForFile_selection" -bool false
 
 ###############################################################################
 # Time Machine                                                                #

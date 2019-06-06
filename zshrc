@@ -21,6 +21,8 @@ POWERLEVEL9K_PYENV_BACKGROUND="204"
 POWERLEVEL9K_VIRTUALENV_BACKGROUND="204"
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon docker_machine virtualenv context dir_writable dir vcs)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs history time)
+POWERLEVEL9K_SHORTEN_DIR_LENGTH=4
+POWERLEVEL9K_SHORTEN_STRATEGY="truncate_middle"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -70,7 +72,7 @@ POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs histor
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(ansible aws docker git golang httpie iterm2 nvm pyenv rbenv zsh-completions zsh-syntax-highlighting)
+plugins=(ansible aws docker git golang httpie iterm2 nvm pyenv rbenv zsh-completions zsh-syntax-highlighting z)
 
 # User configuration
 
@@ -113,4 +115,7 @@ source $(brew --prefix nvm)/nvm.sh
 if [ -f ~/.zshrc_local_after ]; then
     source ~/.zshrc_local_after
 fi
+
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 

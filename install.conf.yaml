@@ -15,6 +15,7 @@
 
 - link:
     ~/.dotfiles: ''
+    ~/.iterm2_shell_integration.zsh: iterm/iterm2_shell_integration.zsh
     ~/.tmux.conf: tmux.conf
     ~/bin: bin/
     ~/.vim: vim/
