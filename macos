@@ -165,6 +165,9 @@ defaults write -g CGFontRenderingFontSmoothingDisabled -bool FALSE
 
 # Increase sound quality for Bluetooth headphones/headsets
 defaults write com.apple.BluetoothAudioAgent "Apple Bitpool Min (editable)" -int 40
+defaults write bluetoothaudiod "Enable AAC codec" -bool true
+defaults write bluetoothaudiod "Enable AptX codec" -bool true
+defaults write bluetoothaudiod "AAC Bitrate" 320
 
 # Enable full keyboard access for all controls
 # (e.g. enable Tab in modal dialogs)

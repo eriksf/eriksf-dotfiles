@@ -16,7 +16,7 @@ export EDITOR="$VISUAL"
 #if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi
 
 # add this configuration to ~/.zshrc
-#export HISTFILE=~/.zsh_history  # ensure history file visibility
+export HISTFILE=~/.zsh_history  # ensure history file visibility
 export HSTR_CONFIG=hicolor        # get more colors
 bindkey -s "\C-r" "\eqhh\n"     # bind hh to Ctrl-r (for Vi mode check doc)
 

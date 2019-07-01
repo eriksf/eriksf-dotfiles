@@ -120,3 +120,6 @@ alias ipy="python -c 'import IPython; IPython.terminal.ipapp.launch_new_instance
 
 alias pandoc="/usr/local/bin/pandoc"
 
+alias dis="docker images --format '{{.Size}}\t{{.Repository}}:{{.Tag}}\t{{.ID}}' | sort -h | column -t"
+alias disr="docker images --format '{{.Size}}\t{{.Repository}}:{{.Tag}}\t{{.ID}}' | sort -hr | column -t"
+
