@@ -9,8 +9,24 @@ set nocompatible
 "  runtime bundle/tpope-vim-pathogen/autoload/pathogen.vim
 "  call pathogen#infect()
 "  call pathogen#helptags()
-call pathogen#infect()
-call pathogen#helptags()
+"  call pathogen#infect()
+"  call pathogen#helptags()
+
+" =============== Vim-plug Initialization ===============
+call plug#begin('~/.vim/bundle')
+
+Plug 'airblade/vim-gitgutter'
+Plug 'editorconfig/editorconfig-vim'
+Plug 'scrooloose/nerdtree'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-fugitive'
+Plug 'vim-airline/vim-airline'
+Plug 'chase/vim-ansible-yaml'
+Plug 'lepture/vim-jinja'
+Plug 'leafgarland/typescript-vim'
+Plug 'ycm-core/YouCompleteMe'
+
+call plug#end()
 
 " ================ General Config ====================
 
