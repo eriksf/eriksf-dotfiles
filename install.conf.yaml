@@ -17,6 +17,7 @@
     ~/.dotfiles: ''
     ~/.iterm2_shell_integration.zsh: iterm/iterm2_shell_integration.zsh
     ~/.tmux.conf: tmux.conf
+    ~/.dircolors: dircolors-solarized
     ~/bin: bin/
     ~/.vim: vim/
     ~/.zlogin:
@@ -46,5 +47,5 @@
 - shell:
   - [sh fonts/install.sh, Installing Powerline fonts]
   - [sh ~/.macos, Customizing MacOS environment]
-  - [/usr/local/bin/code --install-extension "Shan.code-settings-sync", Install VSCode Sync Settings] 
+  - [/usr/local/bin/code --install-extension "Shan.code-settings-sync", Install VSCode Sync Settings]
   - [sh post-install.sh, Running post installation script]

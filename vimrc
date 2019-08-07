@@ -147,6 +147,8 @@ nnoremap tn  :tabnext<Space>
 nnoremap tm  :tabm<Space>
 nnoremap td  :tabclose<CR>
 
+map <C-n> :NERDTreeToggle<CR>
+
 set guifont=Inconsolata\ for\ Powerline:h15
 set t_Co=256
 set encoding=utf-8
