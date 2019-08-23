@@ -12,6 +12,7 @@
   - [mkdir -p ~/.oh-my-zsh/custom/, Creating oh-my-zsh custom folders]
   - [mkdir -p ~/.oh-my-zsh/custom/plugins, Creating oh-my-zsh custom plugins folders]
   - [brew bundle, Installing Homebrew formulas from Brewfile]
+  - [curl https://pyenv.run | bash, Installing pyenv]
 
 - link:
     ~/.dotfiles: ''

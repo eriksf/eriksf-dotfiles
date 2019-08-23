@@ -1,5 +1,8 @@
 # Initialize completion
-autoload -U compinit && compinit
+autoload -U +X compinit && compinit
+autoload -U +X bashcompinit && bashcompinit
+# _get_comp_words_by_ref() { :; }
+# source ${HOME}/atmo.bash
 
 # VIM as default editor
 export VISUAL=vim
