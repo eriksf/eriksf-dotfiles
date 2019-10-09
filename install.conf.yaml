@@ -36,8 +36,10 @@
     ~/.zshrc_local_after: zshrc_local_after
     ~/.gitconfig: gitconfig
     ~/.gitmessage: gitmessage
+    ~/.oh-my-zsh/custom/auto-suggestions.zsh: oh-my-zsh/custom/auto-suggestions.zsh
     ~/.oh-my-zsh/custom/plugins/zsh-completions: oh-my-zsh/custom/plugins/zsh-completions/
     ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting: oh-my-zsh/custom/plugins/zsh-syntax-highlighting/
+    ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions: oh-my-zsh/custom/plugins/zsh-autosuggestions/
     ~/.oh-my-zsh/custom/themes/powerlevel10k: oh-my-zsh/custom/themes/powerlevel10k/
     ~/.motd: my_motd.sh
     ~/Brewfile: Brewfile

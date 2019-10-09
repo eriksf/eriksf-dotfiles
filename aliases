@@ -1,6 +1,12 @@
+# use GNU du & tar
+alias du="gdu"
+alias tar="gtar"
+
 # List only directories
+alias ls="gls --color=tty -F"
 alias lsd="ls -lF | grep --color=never '^d'"
 alias lsc="ls -l | grep -c '^-'"
+alias lsu="ls -f1 -alF --color=tty"
 
 # Always enable colored `grep` output
 # Note: `GREP_OPTIONS="--color=auto"` is deprecated, hence the alias usage.

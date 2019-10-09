@@ -19,7 +19,7 @@ DEFAULT_USER="eriksf"
 POWERLEVEL9K_MODE="nerdfont-complete"
 POWERLEVEL9K_PYENV_BACKGROUND="204"
 POWERLEVEL9K_VIRTUALENV_BACKGROUND="204"
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon docker_machine virtualenv context dir_writable dir vcs)
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon docker_machine pyenv virtualenv context dir_writable dir vcs)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs history time)
 POWERLEVEL9K_SHORTEN_DIR_LENGTH=4
 POWERLEVEL9K_SHORTEN_STRATEGY="truncate_middle"
@@ -72,7 +72,7 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(ansible aws docker docker-compose git golang httpie iterm2 nvm pyenv rbenv zsh-completions zsh-syntax-highlighting z)
+plugins=(ansible aws docker docker-compose git golang httpie iterm2 nvm pyenv rbenv zsh-autosuggestions zsh-syntax-highlighting z)
 
 # User configuration
 

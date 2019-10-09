@@ -64,7 +64,7 @@ export TOKEN=$(jq '.access_token' ~/.agave/current | sed 's/"//g')
 # tvcl API key
 export THETVDB_API_KEY=4BE21B103DDEDCC2
 
-export PATH="$HOME/sd2e-cloud-cli/bin:/$HOME/.yarn/bin:$HOME/.local/bin:$HOME/bin:$HOME/Devel/icommands/bin:/usr/local/m-cli:/usr/local/opt/gems/bin:$HOME/Devel/git/ansible/bin:$PATH"
+export PATH="$HOME/go/bin:$HOME/sd2e-cloud-cli/bin:/$HOME/.yarn/bin:$HOME/.local/bin:$HOME/bin:$HOME/Devel/icommands/bin:/usr/local/m-cli:/usr/local/opt/gems/bin:$HOME/Devel/git/ansible/bin:$PATH"
 
 # Set the default Less options.
 # Mouse-wheel scrolling has been disabled by -X (disable screen clearing).
