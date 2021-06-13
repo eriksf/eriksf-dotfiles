@@ -7,7 +7,7 @@
 export VIRTUAL_ENV_DISABLE_PROMPT=1
 export GIT_INTERNAL_GETTEXT_TEST_FALLBACKS=1
 
-export NVM_DIR=~/.node
+#export NVM_DIR=~/.node
 #export JAVA_HOME=`/usr/libexec/java_home -v 1.6`
 #export JAVA_HOME=`/usr/libexec/java_home -v 1.7`
 export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
@@ -65,7 +65,7 @@ export TOKEN=$(jq '.access_token' ~/.agave/current | sed 's/"//g')
 export THETVDB_API_KEY=4BE21B103DDEDCC2
 
 export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$HOME/go/bin:$HOME/sd2e-cloud-cli/bin:/$HOME/.yarn/bin:$HOME/.local/bin:$HOME/bin:$HOME/Devel/icommands/bin:/usr/local/m-cli:/usr/local/opt/gems/bin:$HOME/Devel/git/ansible/bin:$PATH"
+export PATH="$PYENV_ROOT/bin:$HOME/go/bin:$HOME/sd2e-cloud-cli/bin:/$HOME/.yarn/bin:$HOME/.local/bin:$HOME/bin:$HOME/Devel/icommands/bin:/usr/local/m-cli:$HOME/Devel/git/ansible/bin:$PATH"
 eval "$(pyenv init --path)"
 
 # Set the default Less options.
