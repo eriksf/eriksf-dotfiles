@@ -47,7 +47,7 @@ set wildmenu
 set cmdheight=2
 set showmatch
 set mat=2
-set cursorline
+"set cursorline
 
 " This makes vim act like all other editors, buffers can
 " exist in the background without being in a window.
@@ -56,7 +56,7 @@ set hidden
 
 "turn on syntax highlighting
 syntax on
-colorscheme zenburn
+colorscheme elflord
 
 " yank to clipboard
 if has("clipboard")
@@ -72,6 +72,9 @@ endif
 set incsearch        "Find the next match as we type the search
 set hlsearch         "Hilight searches by default
 set viminfo='100,f1  "Save up to 100 marks, enable capital marks
+" Reset highlighted search
+" nnoremap <CR> :let @/=""<CR><CR>
+nmap <esc><esc> :noh<return>
 
 " ================ Turn Off Swap Files ==============
 
