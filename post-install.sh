@@ -1,10 +1,10 @@
 #!/bin/bash
 
 # Change default shell
-if ! fgrep -q "/usr/local/bin/zsh" /etc/shells; then
+if ! fgrep -q "/opt/homebrew/bin/zsh" /etc/shells; then
   echo 'Changing default shell to zsh'
-  echo "/usr/local/bin/zsh" | sudo tee -a /etc/shells
-  chsh -s /usr/local/bin/zsh
+  echo "/opt/homebrew/bin/zsh" | sudo tee -a /etc/shells
+  chsh -s /opt/homebrew/bin/zsh
 else
   echo 'Already using zsh'
 fi

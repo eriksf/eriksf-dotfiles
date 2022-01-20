@@ -12,7 +12,6 @@
   - [mkdir -p ~/.oh-my-zsh/custom/, Creating oh-my-zsh custom folders]
   - [mkdir -p ~/.oh-my-zsh/custom/plugins, Creating oh-my-zsh custom plugins folders]
   - [brew bundle, Installing Homebrew formulas from Brewfile]
-  - [curl https://pyenv.run | bash, Installing pyenv]
 
 - link:
     ~/.dotfiles: ''
@@ -49,6 +48,4 @@
 
 - shell:
   - [sh fonts/install.sh, Installing Powerline fonts]
-  - [sh ~/.macos, Customizing MacOS environment]
-  - [/usr/local/bin/code --install-extension "Shan.code-settings-sync", Install VSCode Sync Settings]
   - [sh post-install.sh, Running post installation script]
