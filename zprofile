@@ -23,7 +23,8 @@ export HTML_TIDY=$HOME/.tidy_config.txt
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/Devel
 
-export HOMEBREW_GITHUB_API_TOKEN=`/usr/bin/security find-generic-password -gs HOMEBREW_GITHUB_API_TOKEN 2>&1 >/dev/null | grep password | cut -f 2 -d ' ' | egrep -o '[0-9a-fA-F]+' | tr -d "\n"`
+#export HOMEBREW_GITHUB_API_TOKEN=`/usr/bin/security find-generic-password -gs HOMEBREW_GITHUB_API_TOKEN 2>&1 >/dev/null | grep password | cut -f 2 -d ' ' | egrep -o '[0-9a-fA-F]+' | tr -d "\n"`
+export HOMEBREW_GITHUB_API_TOKEN=`security find-generic-password -s HOMEBREW_GITHUB_API_TOKEN -w`
 
 # Highlight section titles in manual pages.
 export LESS_TERMCAP_md="${yellow}";
@@ -54,19 +55,17 @@ path=(
   $path
 )
 
-# Araport/Adama
-export API=https://api.araport.org/community/v0.3
-#export API_DEV=http://adama-dev.cloudapp.net/community/v0.3
-export API_DEV=http://129.114.6.164/community/v0.3
-export TOKEN_DEV=39be2da6966c4c45ae8439fab1ab8ea8
-export TOKEN=$(jq '.access_token' ~/.agave/current | sed 's/"//g')
-
 # tvcl API key
 export THETVDB_API_KEY=4BE21B103DDEDCC2
 
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$HOME/go/bin:$HOME/sd2e-cloud-cli/bin:/$HOME/.yarn/bin:$HOME/.local/bin:$HOME/bin:$HOME/Devel/icommands/bin:/usr/local/m-cli:$HOME/Devel/git/ansible/bin:$PATH"
-eval "$(pyenv init --path)"
+# add in m1 homebrew
+eval "$(/opt/homebrew/bin/brew shellenv)"
+FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
+
+#export PYENV_ROOT="$HOME/.pyenv"
+#export PATH="$PYENV_ROOT/bin:$HOME/go/bin:$HOME/sd2e-cloud-cli/bin:/$HOME/.yarn/bin:$HOME/.local/bin:$HOME/bin:$HOME/Devel/icommands/bin:/usr/local/m-cli:$HOME/Devel/git/ansible/bin:$PATH"
+export PATH="/$HOME/.yarn/bin:$HOME/.local/bin:$HOME/bin:$HOME/Devel/icommands/bin:/usr/local/m-cli:$HOME/Devel/git/ansible/bin:$PATH"
+#eval "$(pyenv init --path)"
 
 # Set the default Less options.
 # Mouse-wheel scrolling has been disabled by -X (disable screen clearing).
@@ -90,6 +89,8 @@ fi
 
 export PATH="$HOME/.poetry/bin:$PATH"
 
-# for pyenv (python versions below 3.7)
-export LDFLAGS="-L/usr/local/opt/zlib/lib -L/usr/local/opt/bzip2/lib"
-export CPPFLAGS="-I/usr/local/opt/zlib/include -I/usr/local/opt/bzip2/include"
+# for python-build
+#export LDFLAGS="-L/usr/local/opt/zlib/lib -L/usr/local/opt/bzip2/lib"
+#export CPPFLAGS="-I/usr/local/opt/zlib/include -I/usr/local/opt/bzip2/include"
+export LDFLAGS="-L/opt/homebrew/lib"
+export CPPFLAGS="-I/opt/homebrew/include"

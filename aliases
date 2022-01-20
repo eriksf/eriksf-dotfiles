@@ -1,6 +1,7 @@
 # use GNU du & tar
 alias du="gdu"
 alias tar="gtar"
+alias sed="gsed"
 
 # List only directories
 alias ls="gls --color=tty -F"
@@ -128,4 +129,6 @@ alias pandoc="/usr/local/bin/pandoc"
 
 alias dis="docker images --format '{{.Size}}\t{{.Repository}}:{{.Tag}}\t{{.ID}}' | sort -h | column -t"
 alias disr="docker images --format '{{.Size}}\t{{.Repository}}:{{.Tag}}\t{{.ID}}' | sort -hr | column -t"
+
+alias ibrew="/usr/local/bin/brew"
 

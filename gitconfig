@@ -180,7 +180,8 @@
 
 [github]
     user = eriksf
-    token = !"security find-generic-password -gs GitHub-API-Token 2>&1 >/dev/null |  cut -f 2 -d ' ' |  egrep -o '[0-9a-fA-F]+' | tr -d \"\n\""
+    #token = !"security find-generic-password -gs GitHub-API-Token 2>&1 >/dev/null |  cut -f 2 -d ' ' |  egrep -o '[0-9a-fA-F]+' | tr -d \"\n\""
+    token = !"security find-generic-password -s HOMEBREW_GITHUB_API_TOKEN -w"
 
 [pager]
     color = true
@@ -207,7 +208,7 @@
         trustExitCode = true
         cmd = open -W -a Meld --args --auto-merge \"$PWD/$LOCAL\" \"$PWD/$BASE\" \"$PWD/$REMOTE\" --output=\"$PWD/$MERGED\"
 [pull]
-	rebase = preserve
+	rebase = true
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
