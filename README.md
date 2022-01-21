@@ -22,7 +22,7 @@ My custom dotfiles using oh-my-zsh and dotbot
 * You can edit my_motd.sh to customize your message of the day
 
 ## Quick start
-* Clone the repo: `git clone https://github.com/eriksf/eriksf-dotfiles.git`.
+* Clone the repo: `git clone --recurse-submodules https://github.com/eriksf/eriksf-dotfiles.git`.
 * In the terminal, change the directory to the cloned repo.
 * You need to change the contents of `gitconfig_local` to your own.
 * To setup the environment, run the following code on terminal: `./install`.
