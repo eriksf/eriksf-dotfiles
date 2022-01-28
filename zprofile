@@ -10,7 +10,7 @@ export GIT_INTERNAL_GETTEXT_TEST_FALLBACKS=1
 #export NVM_DIR=~/.node
 #export JAVA_HOME=`/usr/libexec/java_home -v 1.6`
 #export JAVA_HOME=`/usr/libexec/java_home -v 1.7`
-export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
+#export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
 #export JAVA_HOME=`/usr/libexec/java_home`
 #export ANT_HOME=/Users/Shared/macports/share/java/apache-ant
 #export ANT_OPTS="-server -XX:MaxPermSize=256M -Xmx1700m -XX:+UseParallelGC -Xms1700m -XX:SoftRefLRUPolicyMSPerMB=1 -XX: MaxHeapFreeRatio=99"
