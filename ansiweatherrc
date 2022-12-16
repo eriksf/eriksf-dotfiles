@@ -1,0 +1,6 @@
+location:Austin,US
+fetch_cmd:wget -qO-
+units:imperial
+symbols:true
+ansi:true
+show_daylight:true
