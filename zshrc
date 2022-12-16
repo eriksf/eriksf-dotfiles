@@ -81,7 +81,7 @@ COMPLETION_WAITING_DOTS="true"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 #plugins=(ansible aws docker docker-compose git golang httpie iterm2 nvm pyenv rbenv zsh-autosuggestions zsh-syntax-highlighting z)
-plugins=(ansible aws docker docker-compose git golang httpie iterm2 asdf direnv zsh-autosuggestions zsh-syntax-highlighting z)
+plugins=(ansible aws docker docker-compose git golang httpie iterm2 asdf direnv poetry zsh-autosuggestions zsh-syntax-highlighting z)
 
 # User configuration
 

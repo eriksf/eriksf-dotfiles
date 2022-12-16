@@ -22,10 +22,12 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-commentary'
 Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 Plug 'chase/vim-ansible-yaml'
 Plug 'lepture/vim-jinja'
 Plug 'leafgarland/typescript-vim'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+"Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'kristijanhusak/vim-hybrid-material'
 
 call plug#end()
 
@@ -57,7 +59,8 @@ set hidden
 
 "turn on syntax highlighting
 syntax on
-colorscheme elflord
+set background=dark
+colorscheme eclipse
 
 " yank to clipboard
 if has("clipboard")
@@ -162,4 +165,7 @@ set termencoding=utf-8
 
 let g:pymode_options_colorcolumn = 0
 let g:pymode_syntax = 0
+let g:airline_powerline_fonts = 1
 
+autocmd BufNewFile,BufRead Gemfile set filetype=ruby
+autocmd BufNewFile,BufRead Vagrantfile set filetype=ruby

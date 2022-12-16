@@ -1,3 +1,5 @@
+# Fig pre block. Keep at the top of this file.
+[[ -f "$HOME/.fig/shell/zprofile.pre.zsh" ]] && builtin source "$HOME/.fig/shell/zprofile.pre.zsh"
 # TODO cleanup this file. it has tons of unrelated settings from various sources.
 
 # Prefer US English and use UTF-8.
@@ -6,6 +8,7 @@
 #
 export VIRTUAL_ENV_DISABLE_PROMPT=1
 export GIT_INTERNAL_GETTEXT_TEST_FALLBACKS=1
+export DISPLAY=:0
 
 #export NVM_DIR=~/.node
 #export JAVA_HOME=`/usr/libexec/java_home -v 1.6`
@@ -87,10 +90,15 @@ if [[ ! -d "${TMPDIR}" ]]; then
   mkdir -m 700 "${TMPDIR}"
 fi
 
-export PATH="$HOME/.poetry/bin:$PATH"
+#export PATH="$HOME/.poetry/bin:$PATH"
 
 # for python-build
 #export LDFLAGS="-L/usr/local/opt/zlib/lib -L/usr/local/opt/bzip2/lib"
 #export CPPFLAGS="-I/usr/local/opt/zlib/include -I/usr/local/opt/bzip2/include"
+#export LDFLAGS="-L/opt/homebrew/lib -L/opt/homebrew/opt/openssl@1.1/lib"
+#export CPPFLAGS="-I/opt/homebrew/include -I/opt/homebrew/opt/openssl@1.1/include"
 export LDFLAGS="-L/opt/homebrew/lib"
 export CPPFLAGS="-I/opt/homebrew/include"
+
+# Fig post block. Keep at the bottom of this file.
+[[ -f "$HOME/.fig/shell/zprofile.post.zsh" ]] && builtin source "$HOME/.fig/shell/zprofile.post.zsh"

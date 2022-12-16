@@ -1,6 +1,8 @@
 # Initialize completion
 autoload -U +X compinit && compinit
 autoload -U +X bashcompinit && bashcompinit
+#source $HOME/.oh-my-zsh/custom/plugins/zsh-autocomplete/zsh-autocomplete.plugin.zsh
+#zstyle ':autocomplete:*' min-input 1
 # _get_comp_words_by_ref() { :; }
 # source ${HOME}/atmo.bash
 
@@ -44,10 +46,15 @@ unsetopt share_history
 #export LD_LIBRARY_PATH=$DYLD_LIBRARY_PATH
 #export PATH=$DYLD_LIBRARY_PATH:$PATH
 
+# pipx autocomplete
+eval "$(register-python-argcomplete pipx)"
+
 # Thefuck setup
 eval "$(thefuck --alias)"
 
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+if [[ $TERM_PROGRAM != "WarpTerminal" ]]; then
+    test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+fi
 
 bash $HOME/.motd
 
