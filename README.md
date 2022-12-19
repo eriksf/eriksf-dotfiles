@@ -1,6 +1,6 @@
 # eriksf-dotfiles
 
-My custom dotfiles using oh-my-zsh and dotbot
+My custom dotfiles using znap and dotbot
 
 ## Table of contents
 * [Requirements](#requirements)
@@ -16,8 +16,7 @@ My custom dotfiles using oh-my-zsh and dotbot
 ## What you get
 * Homebrew
 * tmux
-* oh-my-zsh
-* Some terminal aliases and functions in oh-my-zsh/custom/my-aliases.zsh
+* znap
 * You can edit what you want to install in pre-install.sh
 * You can edit my_motd.sh to customize your message of the day
 
