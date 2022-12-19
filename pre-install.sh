@@ -11,15 +11,17 @@ else
 fi
 brew tap homebrew/bundle  # Install Homebrew Bundle
 
-# Check if oh-my-zsh is installed
-OMZDIR="$HOME/.oh-my-zsh"
-if [ ! -d "$OMZDIR" ]; then
-  echo 'Installing oh-my-zsh'
-  /bin/sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-  #/bin/sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+# Check if znap is installed
+ZNAPDIR="$HOME/.zsh-plugins"
+if [ ! -d "$ZNAPDIR" ]; then
+  echo 'Installing znap'
+  mkdir -p $ZNAPDIR
+  cd $ZNAPDIR
+  git clone --depth 1 -- https://github.com/marlonrichert/zsh-snap.git
+  source zsh-snap/install.sh
 else
-  echo 'Updating oh-my-zsh'
-  /bin/bash $OMZDIR/tools/upgrade.sh
+  echo 'Updating znap'
+  znap pull
 fi
 
 # Check if Mac-CLI is installed

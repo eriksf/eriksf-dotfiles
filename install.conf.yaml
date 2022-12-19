@@ -5,12 +5,10 @@
     shell:
       stderr: true
 
-- clean: ['~', '~/.oh-my-zsh/custom/', '~/.oh-my-zsh/custom/plugins/']
+- clean: ['~', '~/.zsh-plugins/']
 
 - shell:
   - [sh pre-install.sh, Running pre installation script]
-  - [mkdir -p ~/.oh-my-zsh/custom/, Creating oh-my-zsh custom folders]
-  - [mkdir -p ~/.oh-my-zsh/custom/plugins, Creating oh-my-zsh custom plugins folders]
   - [brew bundle, Installing Homebrew formulas from Brewfile]
 
 - link:
@@ -32,14 +30,8 @@
     ~/.zshrc:
       force: true
       path: zshrc
-    ~/.zshrc_local_after: zshrc_local_after
     ~/.gitconfig: gitconfig
     ~/.gitmessage: gitmessage
-    ~/.oh-my-zsh/custom/auto-suggestions.zsh: oh-my-zsh/custom/auto-suggestions.zsh
-    ~/.oh-my-zsh/custom/plugins/zsh-completions: oh-my-zsh/custom/plugins/zsh-completions/
-    ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting: oh-my-zsh/custom/plugins/zsh-syntax-highlighting/
-    ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions: oh-my-zsh/custom/plugins/zsh-autosuggestions/
-    ~/.oh-my-zsh/custom/themes/powerlevel10k: oh-my-zsh/custom/themes/powerlevel10k/
     ~/.motd: my_motd.sh
     ~/Brewfile: Brewfile
     ~/.vimrc: vimrc
@@ -47,5 +39,6 @@
     ~/.tidy_config.txt: tidy_config.txt
 
 - shell:
+  - [sh znap_installs.sh, Installing znap plugins]
   - [sh fonts/install.sh, Installing Powerline fonts]
   - [sh post-install.sh, Running post installation script]
