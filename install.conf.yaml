@@ -37,6 +37,7 @@
     ~/.vimrc: vimrc
     ~/.macos: macos
     ~/.tidy_config.txt: tidy_config.txt
+    ~/.ansiweatherrc: ansiweatherrc
 
 - shell:
   - [sh znap_installs.sh, Installing znap plugins]
