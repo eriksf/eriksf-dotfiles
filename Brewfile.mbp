@@ -88,6 +88,7 @@ brew "mtr"
 brew "ncdu"
 brew "ncftp"
 brew "neofetch"
+brew "neovim"
 brew "nginx"
 brew "p7zip"
 brew "pandoc"
@@ -176,6 +177,7 @@ mas "g Converter", id: 1545532142
 mas "Irvue", id: 1039633667
 mas "LiveReload", id: 482898991
 mas "Maccy", id: 1527619437
+mas "Mastonaut", id: 1450757574
 mas "Memory Diag", id: 748212890
 mas "mikrofon", id: 1518516143
 mas "MusicHarbor", id: 1440405750

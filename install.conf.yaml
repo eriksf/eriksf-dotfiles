@@ -13,6 +13,9 @@
 
 - link:
     ~/.dotfiles: ''
+    ~/.config/nvim/init.lua:
+      create: true
+      path: config/nvim/init.lua
     ~/.iterm2_shell_integration.zsh: iterm/iterm2_shell_integration.zsh
     ~/.tmux.conf: tmux.conf
     ~/.dircolors: dircolors-solarized
