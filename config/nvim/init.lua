@@ -26,6 +26,8 @@ require('packer').startup(function(use)
     },
   }
 
+  use { "WhoIsSethDaniel/mason-tool-installer.nvim" }
+
   use { -- Autocompletion
     'hrsh7th/nvim-cmp',
     requires = { 'hrsh7th/cmp-nvim-lsp', 'L3MON4D3/LuaSnip', 'saadparwaiz1/cmp_luasnip' },
@@ -417,6 +419,41 @@ mason_lspconfig.setup_handlers {
       settings = servers[server_name],
     }
   end,
+}
+
+require('mason-tool-installer').setup {
+  ensure_installed = {
+    'bash-language-server',
+    'clangd',
+    'dockerfile-language-server',
+    'golangci-lint-langserver',
+    'gopls',
+    'html-lsp',
+    'jdtls',
+    'json-lsp',
+    'lua-language-server',
+    'nginx-language-server',
+    'perlnavigator',
+    'python-lsp-server',
+    'quick-lint-js',
+    'ruby-lsp',
+    'rust-analyzer',
+    'sqlls',
+    'typescript-language-server',
+    'yaml-language-server',
+    'cpptools',
+    'actionlint',
+    'cpplint',
+    'flake8',
+    'golangci-lint',
+    'hadolint',
+    'jsonlint',
+    'quick-lint-js',
+    'semgrep',
+    'shellcheck',
+    'yamllint',
+    'jq'
+  }
 }
 
 -- Turn on lsp status information
