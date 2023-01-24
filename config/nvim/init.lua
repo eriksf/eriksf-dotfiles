@@ -45,11 +45,25 @@ require('packer').startup(function(use)
     after = 'nvim-treesitter',
   }
 
+  use {
+    "folke/trouble.nvim",
+    requires = "nvim-tree/nvim-web-devicons",
+    config = function()
+    require("trouble").setup {
+      -- your configuration comes here
+      -- or leave it empty to use the default settings
+      -- refer to the configuration section below
+    }
+    end
+  }
+
   use { "ellisonleao/gruvbox.nvim" }
   use { "savq/melange" }
   use {  "EdenEast/nightfox.nvim" }
   use { "shaunsingh/seoul256.nvim" }
   use { "Th3Whit3Wolf/space-nvim" }
+  use { "arcticicestudio/nord-vim" }
+  use { "folke/lsp-colors.nvim" }
 
   -- Git related plugins
   use 'tpope/vim-fugitive'
@@ -130,7 +144,8 @@ vim.wo.signcolumn = 'yes'
 -- Set colorscheme
 vim.o.termguicolors = true
 --vim.o.background = "dark"
-vim.cmd [[colorscheme gruvbox]]
+--vim.cmd [[colorscheme gruvbox]]
+vim.cmd [[colorscheme nord]]
 --vim.cmd [[colorscheme melange]]
 --vim.cmd [[colorscheme carbonfox]]
 --require('seoul256')
@@ -199,7 +214,8 @@ require('lualine').setup {
     icons_enabled = false,
     --theme = 'onedark',
     --theme = 'seoul256',
-    theme = 'gruvbox',
+    --theme = 'gruvbox',
+    theme = 'nord',
     component_separators = '|',
     section_separators = '',
   },
@@ -329,6 +345,13 @@ vim.keymap.set('n', ']d', vim.diagnostic.goto_next)
 vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float)
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist)
 
+vim.keymap.set("n", "<leader>xx", "<cmd>TroubleToggle<cr>", {silent = true, noremap = true})
+vim.keymap.set("n", "<leader>xw", "<cmd>TroubleToggle workspace_diagnostics<cr>", {silent = true, noremap = true})
+vim.keymap.set("n", "<leader>xd", "<cmd>TroubleToggle document_diagnostics<cr>", {silent = true, noremap = true})
+vim.keymap.set("n", "<leader>xl", "<cmd>TroubleToggle loclist<cr>", {silent = true, noremap = true})
+vim.keymap.set("n", "<leader>xq", "<cmd>TroubleToggle quickfix<cr>", {silent = true, noremap = true})
+vim.keymap.set("n", "gR", "<cmd>TroubleToggle lsp_references<cr>", {silent = true, noremap = true})
+
 -- LSP settings.
 --  This function gets run when an LSP connects to a particular buffer.
 local on_attach = function(_, bufnr)
@@ -429,6 +452,7 @@ require('mason-tool-installer').setup {
     'golangci-lint-langserver',
     'gopls',
     'html-lsp',
+    'jedi-language-server',
     'jdtls',
     'json-lsp',
     'lua-language-server',
@@ -517,10 +541,22 @@ kmap("n", "<esc><esc>", ":noh<CR>")
 require('lspconfig').pylsp.setup{
   settings = {
     pylsp = {
+      configurationSources = {"flake8"},
       plugins = {
         pycodestyle = {
+          enabled = false,
           maxLineLength = 300
-        }
+        },
+        flake8 = {
+          enabled = true,
+          ignore = {},
+          maxLineLength = 300
+        },
+        jedi_completion = { enabled = true },
+        jedi_hover = { enabled = true },
+        jedi_references = { enabled = true },
+        jedi_signature_help = { enabled = true },
+        jedi_symbols = { enabled = true }
       }
     }
   }
