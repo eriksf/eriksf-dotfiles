@@ -180,6 +180,9 @@ vim.o.scrolloff = 8
 vim.o.sidescrolloff = 15
 vim.o.sidescroll = 1
 
+-- wrap
+vim.w.linebreak = true
+
 
 -- [[ Basic Keymaps ]]
 -- Set <space> as the leader key
