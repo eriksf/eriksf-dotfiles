@@ -57,6 +57,8 @@ require('packer').startup(function(use)
     end
   }
 
+  --use {'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons'}
+
   use { "ellisonleao/gruvbox.nvim" }
   use { "savq/melange" }
   use {  "EdenEast/nightfox.nvim" }
@@ -173,6 +175,7 @@ vim.o.smartindent = true
 vim.o.smarttab = true
 vim.o.shiftwidth = 4
 vim.o.softtabstop = 4
+vim.o.tabstop = 4
 vim.o.expandtab = true
 
 -- scrolling
@@ -214,7 +217,7 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 -- See `:help lualine.txt`
 require('lualine').setup {
   options = {
-    icons_enabled = false,
+    icons_enabled = true,
     --theme = 'onedark',
     --theme = 'seoul256',
     --theme = 'gruvbox',
@@ -539,6 +542,8 @@ local kmap = function(mode, lhs, rhs, opts)
 end
 
 kmap("n", "<esc><esc>", ":noh<CR>")
+kmap("n", "<C-`>", ":tabnext<CR>")
+kmap("n", "<C-~>", ":tabprev<CR>")
 
 -- configure pylsp
 require('lspconfig').pylsp.setup{
@@ -564,6 +569,8 @@ require('lspconfig').pylsp.setup{
     }
   }
 }
+
+--require('bufferline').setup{}
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
