@@ -308,8 +308,8 @@ vim.keymap.set("n", "<leader>fb", function()
     hidden = true,
     grouped = true,
     previewer = true,
-    --initial_mode = "normal",
-    --layout_config = { height = 40 }
+    initial_mode = "normal",
+    layout_config = { height = 40 }
   })
 end
 )
