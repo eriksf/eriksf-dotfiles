@@ -220,11 +220,11 @@
 [init]
 	defaultBranch = main
 [maintenance]
-	repo = /Users/eriksf/.zsh-plugins/ansible-zsh
-	repo = /Users/eriksf/.zsh-plugins/asdf
-	repo = /Users/eriksf/.zsh-plugins/ohmyzsh
-	repo = /Users/eriksf/.zsh-plugins/powerlevel10k
-	repo = /Users/eriksf/.zsh-plugins/zsh-autosuggestions
-	repo = /Users/eriksf/.zsh-plugins/zsh-aws
-	repo = /Users/eriksf/.zsh-plugins/zsh-snap
-	repo = /Users/eriksf/.zsh-plugins/zsh-syntax-highlighting
+	repo = /Users/erik/.zsh-plugins/ansible-zsh
+	repo = /Users/erik/.zsh-plugins/asdf
+	repo = /Users/erik/.zsh-plugins/ohmyzsh
+	repo = /Users/erik/.zsh-plugins/powerlevel10k
+	repo = /Users/erik/.zsh-plugins/zsh-autosuggestions
+	repo = /Users/erik/.zsh-plugins/zsh-aws
+	repo = /Users/erik/.zsh-plugins/zsh-snap
+	repo = /Users/erik/.zsh-plugins/zsh-syntax-highlighting
