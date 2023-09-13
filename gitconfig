@@ -219,3 +219,12 @@
     #template = ~/.gitmessage
 [init]
 	defaultBranch = main
+[maintenance]
+	repo = /Users/eriksf/.zsh-plugins/ansible-zsh
+	repo = /Users/eriksf/.zsh-plugins/asdf
+	repo = /Users/eriksf/.zsh-plugins/ohmyzsh
+	repo = /Users/eriksf/.zsh-plugins/powerlevel10k
+	repo = /Users/eriksf/.zsh-plugins/zsh-autosuggestions
+	repo = /Users/eriksf/.zsh-plugins/zsh-aws
+	repo = /Users/eriksf/.zsh-plugins/zsh-snap
+	repo = /Users/eriksf/.zsh-plugins/zsh-syntax-highlighting

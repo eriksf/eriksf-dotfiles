@@ -1,6 +1,7 @@
 # Fig pre block. Keep at the top of this file.
 [[ -f "$HOME/.fig/shell/zprofile.pre.zsh" ]] && builtin source "$HOME/.fig/shell/zprofile.pre.zsh"
 # TODO cleanup this file. it has tons of unrelated settings from various sources.
+export ZSH_CACHE_DIR=$HOME/.zsh-plugins/ohmyzsh/ohmyzsh/cache
 
 # Prefer US English and use UTF-8.
 #export LANG='en_US.UTF-8';
@@ -8,7 +9,6 @@
 #
 export VIRTUAL_ENV_DISABLE_PROMPT=1
 export GIT_INTERNAL_GETTEXT_TEST_FALLBACKS=1
-export DISPLAY=:0
 
 #export NVM_DIR=~/.node
 #export JAVA_HOME=`/usr/libexec/java_home -v 1.6`
@@ -67,7 +67,7 @@ FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
 
 #export PYENV_ROOT="$HOME/.pyenv"
 #export PATH="$PYENV_ROOT/bin:$HOME/go/bin:$HOME/sd2e-cloud-cli/bin:/$HOME/.yarn/bin:$HOME/.local/bin:$HOME/bin:$HOME/Devel/icommands/bin:/usr/local/m-cli:$HOME/Devel/git/ansible/bin:$PATH"
-export PATH="/$HOME/.yarn/bin:$HOME/.local/bin:$HOME/bin:$HOME/Devel/icommands/bin:/usr/local/m-cli:$HOME/Devel/git/ansible/bin:$PATH"
+export PATH="/$HOME/.yarn/bin:$HOME/.local/bin:$HOME/bin:$HOME/Devel/icommands/bin:/usr/local/m-cli:$PATH"
 #eval "$(pyenv init --path)"
 
 # Set the default Less options.
