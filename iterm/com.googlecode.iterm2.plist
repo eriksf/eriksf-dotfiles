@@ -26054,6 +26054,10 @@
 	</array>
 	<key>NumberOfSpacesPerTab</key>
 	<integer>4</integer>
+	<key>OpenArrangementAtStartup</key>
+	<false/>
+	<key>OpenNoWindowsAtStartup</key>
+	<false/>
 	<key>PasteSpecialChunkDelay</key>
 	<real>0.01</real>
 	<key>PasteSpecialChunkSize</key>

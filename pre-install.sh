@@ -24,6 +24,14 @@ else
   znap pull
 fi
 
+# Install tmux-plugins
+TMUXPDIR="$HOME/.tmux/plugins/tpm"
+if [ ! -d "$TMUXPDIR" ]; then
+    echo 'Install tmux-plugins'
+    mkdir -p $TMUXPDIR
+    git clone https://github.com/tmux-plugins/tpm $TMUXPDIR
+fi
+
 # Check if Mac-CLI is installed
 #if [ ! -f "which mac" ]; then
 #    echo 'Installing Mac-CLI'
