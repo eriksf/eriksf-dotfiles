@@ -67,8 +67,9 @@ FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
 
 #export PYENV_ROOT="$HOME/.pyenv"
 #export PATH="$PYENV_ROOT/bin:$HOME/go/bin:$HOME/sd2e-cloud-cli/bin:/$HOME/.yarn/bin:$HOME/.local/bin:$HOME/bin:$HOME/Devel/icommands/bin:/usr/local/m-cli:$HOME/Devel/git/ansible/bin:$PATH"
-export PATH="/$HOME/.yarn/bin:$HOME/.local/bin:$HOME/bin:$HOME/Devel/icommands/bin:/usr/local/m-cli:$PATH"
+export PATH="$HOME/.tmux/plugins/tmuxifier/bin:$HOME/.yarn/bin:$HOME/.local/bin:$HOME/bin:$HOME/Devel/icommands/bin:/usr/local/m-cli:$PATH"
 #eval "$(pyenv init --path)"
+eval "$(tmuxifier init -)"
 
 # Set the default Less options.
 # Mouse-wheel scrolling has been disabled by -X (disable screen clearing).
