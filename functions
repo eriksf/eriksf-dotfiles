@@ -196,3 +196,5 @@ function pipsi-upgrade() {
 
 #function which() { type -all "$*" | sed -e "s/^$* is //"; }
 
+function ch() { curl -L -s https://cheat.sh/$1 ;}
+
