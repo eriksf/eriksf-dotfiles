@@ -228,3 +228,11 @@
 	repo = /Users/eriksf/.zsh-plugins/zsh-aws
 	repo = /Users/eriksf/.zsh-plugins/zsh-snap
 	repo = /Users/eriksf/.zsh-plugins/zsh-syntax-highlighting
+	repo = /Users/erik/.zsh-plugins/zsh-snap
+	repo = /Users/erik/.zsh-plugins/apachler/zsh-aws
+	repo = /Users/erik/.zsh-plugins/asdf-vm/asdf
+	repo = /Users/erik/.zsh-plugins/ohmyzsh/ohmyzsh
+	repo = /Users/erik/.zsh-plugins/romkatv/powerlevel10k
+	repo = /Users/erik/.zsh-plugins/sparsick/ansible-zsh
+	repo = /Users/erik/.zsh-plugins/zsh-users/zsh-autosuggestions
+	repo = /Users/erik/.zsh-plugins/zsh-users/zsh-syntax-highlighting
