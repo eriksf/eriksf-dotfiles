@@ -60,7 +60,7 @@ set hidden
 "turn on syntax highlighting
 syntax on
 set background=dark
-colorscheme eclipse
+colorscheme hybrid_material
 
 " yank to clipboard
 if has("clipboard")

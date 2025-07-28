@@ -134,8 +134,12 @@ alias ipy="python -c 'import IPython; IPython.terminal.ipapp.launch_new_instance
 
 alias pandoc="/usr/local/bin/pandoc"
 
-alias dis="docker images --format '{{.Size}}\t{{.Repository}}:{{.Tag}}\t{{.ID}}' | sort -h | column -t"
-alias disr="docker images --format '{{.Size}}\t{{.Repository}}:{{.Tag}}\t{{.ID}}' | sort -hr | column -t"
+alias di='docker images'
+alias dis='docker images --format "{{.ID}}\t{{.Size}}\t{{.Repository}}\t{{.Tag}}" | sort -k 2 -h'
+#alias dis="docker images --format '{{.Size}}\t{{.Repository}}:{{.Tag}}\t{{.ID}}' | sort -h | column -t"
+#alias disr="docker images --format '{{.Size}}\t{{.Repository}}:{{.Tag}}\t{{.ID}}' | sort -hr | column -t"
 
 alias ibrew="/usr/local/bin/brew"
 
+alias va='source .venv/bin/activate'
+alias vd='deactivate'

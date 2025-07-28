@@ -1,5 +1,3 @@
-# CodeWhisperer pre block. Keep at the top of this file.
-[[ -f "${HOME}/Library/Application Support/codewhisperer/shell/zprofile.pre.zsh" ]] && builtin source "${HOME}/Library/Application Support/codewhisperer/shell/zprofile.pre.zsh"
 # TODO cleanup this file. it has tons of unrelated settings from various sources.
 export ZSH_CACHE_DIR=$HOME/.zsh-plugins/ohmyzsh/ohmyzsh/cache
 
@@ -67,7 +65,7 @@ FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
 
 #export PYENV_ROOT="$HOME/.pyenv"
 #export PATH="$PYENV_ROOT/bin:$HOME/go/bin:$HOME/sd2e-cloud-cli/bin:/$HOME/.yarn/bin:$HOME/.local/bin:$HOME/bin:$HOME/Devel/icommands/bin:/usr/local/m-cli:$HOME/Devel/git/ansible/bin:$PATH"
-export PATH="$HOME/.tmux/plugins/tmuxifier/bin:$HOME/.yarn/bin:$HOME/.local/bin:$HOME/bin:$HOME/Devel/icommands/bin:/usr/local/m-cli:$PATH"
+export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$HOME/.tmux/plugins/tmuxifier/bin:$HOME/.yarn/bin:$HOME/.local/bin:$HOME/bin:$HOME/Devel/icommands/bin:/usr/local/m-cli:$PATH"
 #eval "$(pyenv init --path)"
 eval "$(tmuxifier init -)"
 
@@ -100,6 +98,8 @@ fi
 #export CPPFLAGS="-I/opt/homebrew/include -I/opt/homebrew/opt/openssl@1.1/include"
 export LDFLAGS="-L/opt/homebrew/lib"
 export CPPFLAGS="-I/opt/homebrew/include"
+#export PYTHON_CONFIGURE_OPTS="--with-tcltk-includes='$(pkg-config tk --cflags)' --with-tcltk-libs='$(pkg-config tk --libs)'"
 
-# CodeWhisperer post block. Keep at the bottom of this file.
-[[ -f "${HOME}/Library/Application Support/codewhisperer/shell/zprofile.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/codewhisperer/shell/zprofile.post.zsh"
+# SambaNova
+export SAMBANOVA_NGBUNDLE1_API_KEY="15b00525-9f6e-4dda-8076-8bab6bea64bd"
+
