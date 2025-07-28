@@ -2,3 +2,12 @@
 .DS_Store
 Gemfile.lock
 vim/bundle
+
+bin/mac
+bin/mac-cli/
+bin/uve-bin
+bin/xcode.sh
+functions.zwc
+vim/colors/darkeclipse.vim
+zshrc.bak
+zshrc.old
