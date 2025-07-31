@@ -5,7 +5,7 @@
     shell:
       stderr: true
 
-- clean: ['~', '~/.zsh-plugins/']
+- clean: ['~', '~/.local/share/zinit']
 
 - shell:
   - [sh pre-install.sh, Running pre installation script]
@@ -16,6 +16,9 @@
     ~/.config/nvim/init.lua:
       create: true
       path: config/nvim/init.lua
+    ~/.config/ohmyposh:
+      create: true
+      path: config/ohmyposh
     ~/.iterm2_shell_integration.zsh: iterm/iterm2_shell_integration.zsh
     ~/.tmux.conf: tmux.conf
     ~/.dircolors: dircolors-solarized
@@ -35,7 +38,6 @@
       path: zshrc
     ~/.gitconfig: gitconfig
     ~/.gitmessage: gitmessage
-    ~/.motd: my_motd.sh
     ~/Brewfile: Brewfile
     ~/.vimrc: vimrc
     ~/.macos: macos
@@ -43,6 +45,5 @@
     ~/.ansiweatherrc: ansiweatherrc
 
 - shell:
-  - [sh znap_installs.sh, Installing znap plugins]
   - [sh fonts/install.sh, Installing Powerline fonts]
   - [sh post-install.sh, Running post installation script]

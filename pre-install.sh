@@ -12,17 +12,17 @@ fi
 brew tap homebrew/bundle  # Install Homebrew Bundle
 
 # Check if znap is installed
-ZNAPDIR="$HOME/.zsh-plugins"
-if [ ! -d "$ZNAPDIR" ]; then
-  echo 'Installing znap'
-  mkdir -p $ZNAPDIR
-  cd $ZNAPDIR
-  git clone --depth 1 -- https://github.com/marlonrichert/zsh-snap.git
-  source zsh-snap/znap.zsh
-else
-  echo 'Updating znap'
-  znap pull
-fi
+#ZNAPDIR="$HOME/.zsh-plugins"
+#if [ ! -d "$ZNAPDIR" ]; then
+#  echo 'Installing znap'
+#  mkdir -p $ZNAPDIR
+#  cd $ZNAPDIR
+#  git clone --depth 1 -- https://github.com/marlonrichert/zsh-snap.git
+#  source zsh-snap/znap.zsh
+#else
+#  echo 'Updating znap'
+#  znap pull
+#fi
 
 # Install tmux-plugins
 TMUXPDIR="$HOME/.tmux/plugins/tpm"
